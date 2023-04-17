@@ -1,0 +1,66 @@
+openapi: "3.0.3"
+info:
+  title: "[Rchada] danawa epdata OpenAPI"
+  version: "1.0.0"
+  contact:
+    email: "ms.choi.rchada@gmail.com"
+  servers:
+    - url: https://development.gigantic-server.com/v1
+      description: Development server
+    - url: https://staging.gigantic-server.com/v1
+      description: Staging server
+    - url: https://api.gigantic-server.com/v1
+      description: Production server
+paths:
+  $ref: "./path.yaml"
+tags:
+  - name: "Common"
+    description: "Common API"
+
+security:
+  - authorization: []
+components:
+  securitySchemes:
+    authorization:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  responses:
+    SuccessOnlyResponse:
+      description: Success
+    SuccessResponse:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                default: true
+              data:
+                type: "object"
+    CreatedResponse:
+      description: Created
+    NoContentResponse:
+      description: No Content
+    BadRequestResponse:
+      description: Bad Request
+    DupEntryResponse:
+      description: Entry Already Exists
+    NotFoundResponse:
+      description: Not Found
+    ErrorResponse:
+      description: Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                default: false
+              code:
+                type: string
+              message:
+                type: "object"
