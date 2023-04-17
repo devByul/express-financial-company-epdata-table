@@ -1,6 +1,6 @@
-import { IMiddleware } from "src/@interface/IMddleware";
-import ApiError from "src/utility/apiError";
-import ApiResponse from "src/utility/apiResponse";
+import { IMiddleware } from "../../@interface/IMddleware";
+import ApiError from "../../utility/apiError";
+import ApiResponse from "../../utility/apiResponse";
 
 const fileNameConvertToUTF8: IMiddleware = (req, res, next) => {
   try {

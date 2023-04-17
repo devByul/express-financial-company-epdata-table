@@ -2,7 +2,7 @@ import multer, { FileFilterCallback } from "multer";
 import { Definition } from "../config/definition";
 import { logger } from "../config/logger";
 import { Request } from "express";
-import { DestinationCallback, FileNameCallback } from "src/@interface/IMulter";
+import { DestinationCallback, FileNameCallback } from "../@interface/IMulter";
 import { existsSync, mkdirSync, rmSync, rmdir } from "fs";
 import path from "path";
 import { IMiddleware } from "../@interface/IMddleware";
