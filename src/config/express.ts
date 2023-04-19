@@ -9,6 +9,7 @@ import { logger, stream } from "./logger";
 import { StatusCodes } from "http-status-codes";
 
 import indexRotuer from "../route/index";
+import apiRotuer from "../route/api/index";
 
 const app = express();
 // const origin = Config.server.mode === "development" ? Config?.front.local : Config?.front.public;
@@ -38,6 +39,7 @@ app.use(morgan("combined", { stream }));
  * Route
  */
 app.use("/", indexRotuer);
+app.use("/api", apiRotuer);
 
 /**
  * Swagger
